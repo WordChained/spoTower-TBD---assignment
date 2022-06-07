@@ -23,7 +23,7 @@ export const initialState = {
       promotionTitle: "Liberty Mutual - Are You Overpaying For Auto Insurance?",
       image: libertyMutualLogo,
       zipCodeList: [123, 456, 789],
-      ageRestriction: undefined,
+      ageRestriction: 0,
       isAgeRestricted: false,
     },
     {
@@ -94,17 +94,17 @@ export const initialState = {
       isAgeRestricted: false,
     },
   ],
-  filter: "",
+  filter: { age: undefined, zipCode: "" },
 };
 
 export default (state, action) => {
-  switch (type.action) {
+  switch (action.type) {
     case "GET_QUOTES":
       return { ...state };
     case "ADD_QUOTES":
       return { ...state, quotes: [...state.quotes, action.newQuote] };
     case "SET_FILTER":
-      return { ...state, filter: action.filter };
+      return { ...state, filter: action.quoteFilters };
     default:
       return state;
   }

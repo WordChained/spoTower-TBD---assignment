@@ -1,16 +1,26 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { QuotesList } from "../../components/quotes/quotes-list/QuotesList";
 import { QuotesContext } from "../../store/contexts/quoteContext";
-import { QuotesList } from "./quotes-list/QuotesList";
 import styles from "./QuotesPage.module.css";
 const QuotesPage = () => {
-  const { quotesState, quotesDispatch } = useContext(QuotesContext);
+  const { quotesState } = useContext(QuotesContext);
   const [filteredQuotes, setFilteredQuotes] = useState(quotesState.quotes);
   useEffect(() => {
-    //this is where i first filter
-  }, []);
+    setFilteredQuotes(
+      quotesState.quotes.filter((quote) => {
+        console.log(quote.zipCodeList.includes(+quotesState.filter.zipCode));
+        return (
+          quote.ageRestriction < quotesState.filter.age &&
+          quote.zipCodeList.includes(+quotesState.filter.zipCode)
+        );
+      })
+    );
+  }, [quotesState.filter]);
 
   return (
     <section className={styles.quotesPageContainer}>
+      <Link to={"/"}>Back to Search</Link>
       <QuotesList quotes={filteredQuotes} />
     </section>
   );
