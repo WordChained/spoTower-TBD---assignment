@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import { QuoteContext } from "../../store/contexts/quoteContext";
+import { QuotesContext } from "../../store/contexts/quoteContext";
 import { QuotesList } from "./quotes-list/QuotesList";
 import styles from "./QuotesPage.module.css";
-export const QuotesPage = () => {
-  const { quoteState } = useContext(QuoteContext);
-  const [filteredQuotes, setFilteredQuotes] = useState(quoteState.quotes);
+const QuotesPage = () => {
+  const { quotesState, quotesDispatch } = useContext(QuotesContext);
+  const [filteredQuotes, setFilteredQuotes] = useState(quotesState.quotes);
   useEffect(() => {
     //this is where i first filter
   }, []);
@@ -15,3 +15,4 @@ export const QuotesPage = () => {
     </section>
   );
 };
+export default QuotesPage;

@@ -1,0 +1,6 @@
+.desktopListContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 10px;
+}

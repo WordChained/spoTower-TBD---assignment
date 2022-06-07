@@ -1,15 +1,13 @@
 import { createContext, useReducer } from "react";
+import quoteReducer, { initialState } from "../reducers/quoteReducer";
 
-export const QuoteContext = createContext();
-
-import React from "react";
-import { initialState, quoteReducer } from "../reducers/quoteReducer";
+export const QuotesContext = createContext();
 
 export const QuoteContextProvider = ({ children }) => {
-  const [quoteState, quoteDispatch] = useReducer(quoteReducer, initialState);
+  const [quotesState, quotesDispatch] = useReducer(quoteReducer, initialState);
   return (
-    <QuoteContext.Provider value={{ quoteState, quoteDispatch }}>
+    <QuotesContext.Provider value={{ quotesState, quotesDispatch }}>
       {children}
-    </QuoteContext.Provider>
+    </QuotesContext.Provider>
   );
 };
