@@ -24,7 +24,6 @@ export const Form = () => {
     }
     const ageInNumber = getAgeInNumber();
     quotesDispatch(filterQuotesAction({ age: ageInNumber, zipCode }));
-    console.log(ev.target);
     navigate("/quotes");
   };
   const getAgeInNumber = () => {

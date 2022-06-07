@@ -3,7 +3,6 @@ import styles from "./Checkbox.module.css";
 export const Checkbox = ({ status, setValues }) => {
   const onChange = (ev) => {
     ev.preventDefault();
-    console.log(ev);
     setValues(ev.target.value);
   };
   return (
