@@ -1,0 +1,22 @@
+.zipCodeInputContainer {
+  height: 50px;
+  width: 100%;
+  position: relative;
+}
+.zipCodeInputContainer input {
+  height: 100%;
+  width: 100%;
+  padding: 5px 20px 5px 30px;
+  border: none;
+  outline: none;
+  font-size: 1.3rem;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px -3px rgba(0, 0, 0, 0.368);
+}
+.locationIconContainer {
+  position: absolute;
+  top: calc(50% - 10px);
+  color: var(--lightblue);
+  font-size: 1.2rem;
+}

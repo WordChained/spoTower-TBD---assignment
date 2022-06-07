@@ -1,0 +1,9 @@
+.quotesButtonContainer {
+  background-color: var(--orange);
+  border: none;
+  border-radius: 12px;
+  width: 100%;
+  padding: 15px;
+  color: white;
+  box-shadow: var(--boxshadow);
+}

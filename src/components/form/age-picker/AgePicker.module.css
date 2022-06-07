@@ -1,0 +1,17 @@
+.agePickerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 5px;
+}
+.agePickerContainer label {
+  font-size: 0.9rem;
+}
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}

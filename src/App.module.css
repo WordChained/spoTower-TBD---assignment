@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  width: 100%;
+}
+:root {
+  --lightblue: rgb(45, 136, 241);
+  --orange: rgb(245, 142, 7);
+  --boxshadow: 0 4px 10px -3px rgba(0, 0, 0, 0.368);
+}

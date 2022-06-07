@@ -1,0 +1,14 @@
+.checkboxContainer {
+}
+.checkboxContainer input {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
+@media (min-width: 700px) {
+  .checkboxContainer {
+    width: 49%;
+    align-items: flex-start;
+    display: flex;
+  }
+}
