@@ -57,7 +57,12 @@ export const Form = () => {
       )}
       <AgePicker setAge={setAge} />
       <StatusCheckboxes />
-      <QuotesButton text={"GET QUOTES"} age={age} zipCode={zipCode} />
+      <QuotesButton
+        text={"GET QUOTES"}
+        age={age}
+        zipCode={zipCode}
+        canBeDisabled={true}
+      />
     </form>
   );
 };
