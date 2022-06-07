@@ -7,12 +7,12 @@ const QuotesPage = () => {
   const { quotesState } = useContext(QuotesContext);
   const [filteredQuotes, setFilteredQuotes] = useState(quotesState.quotes);
   useEffect(() => {
+    if (!quotesState.quotes.length) return;
     setFilteredQuotes(
       quotesState.quotes.filter((quote) => {
-        console.log(quote.zipCodeList.includes(+quotesState.filter.zipCode));
         return (
           quote.ageRestriction < quotesState.filter.age &&
-          quote.zipCodeList.includes(+quotesState.filter.zipCode)
+          quote.zipCodeList.includes(quotesState.filter.zipCode)
         );
       })
     );
@@ -21,7 +21,11 @@ const QuotesPage = () => {
   return (
     <section className={styles.quotesPageContainer}>
       <Link to={"/"}>Back to Search</Link>
-      <QuotesList quotes={filteredQuotes} />
+      {!!filteredQuotes.length ? (
+        <QuotesList quotes={filteredQuotes} />
+      ) : (
+        <div className={styles.placeholder}>No luck..</div>
+      )}
     </section>
   );
 };

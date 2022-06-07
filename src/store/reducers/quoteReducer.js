@@ -22,9 +22,10 @@ export const initialState = {
       ],
       promotionTitle: "Liberty Mutual - Are You Overpaying For Auto Insurance?",
       image: libertyMutualLogo,
-      zipCodeList: [123, 456, 789],
+      zipCodeList: ["12345", "45678"],
       ageRestriction: 0,
       isAgeRestricted: false,
+      site: "www.liberty-mutual.com",
     },
     {
       id: "456",
@@ -47,6 +48,7 @@ export const initialState = {
       zipCodeList: [],
       ageRestriction: 18,
       isAgeRestricted: false,
+      site: "www.progressive-insurance.com",
     },
     {
       id: "678",
@@ -66,9 +68,10 @@ export const initialState = {
       ],
       promotionTitle: "Stop overpaing on your auto insurance",
       image: allstateLogo,
-      zipCodeList: [123, 456],
+      zipCodeList: ["12345", "45678"],
       ageRestriction: 30,
       isAgeRestricted: false,
+      site: "www.allstate.com",
     },
     {
       id: "8910",
@@ -89,9 +92,10 @@ export const initialState = {
       promotionTitle:
         "Drivers who switch from state farm & save with progressive save",
       image: progressiveLogo,
-      zipCodeList: [123, 456],
+      zipCodeList: ["12345"],
       ageRestriction: 66,
       isAgeRestricted: false,
+      site: "www.progressive-insurance.com",
     },
   ],
   filter: { age: undefined, zipCode: "" },

@@ -4,3 +4,9 @@
   text-align: start;
   gap: 10px;
 }
+.linkToSite {
+  align-self: center;
+  text-align: center;
+  color: grey;
+  width: max-content;
+}

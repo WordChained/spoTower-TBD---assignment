@@ -10,12 +10,16 @@ import { ZipCodeInput } from "./zip-code-input/ZipcodeInput";
 export const Form = () => {
   const { quotesState, quotesDispatch } = useContext(QuotesContext);
   const [zipCode, setZipCode] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [age, setAge] = useState(undefined);
   const navigate = useNavigate();
   const onSubmit = (ev) => {
     ev.preventDefault();
-    if (!zipCode) {
-      alert("you must pick an age gap");
+    if (zipCode.length < 5) {
+      return setErrorMessage("zip code must be at least 5 numbers long!");
+    }
+    if (!age) {
+      setErrorMessage("you must pick an age gap!");
       return;
     }
     const ageInNumber = getAgeInNumber();
@@ -48,9 +52,12 @@ export const Form = () => {
         <h5> Find & compare your best rates in 1 minute</h5>
       </div>
       <ZipCodeInput setZipCode={setZipCode} />
+      {!!errorMessage.length && (
+        <span className={styles.error}>{errorMessage}</span>
+      )}
       <AgePicker setAge={setAge} />
       <StatusCheckboxes />
-      <QuotesButton text={"GET QUOTES"} />
+      <QuotesButton text={"GET QUOTES"} age={age} zipCode={zipCode} />
     </form>
   );
 };

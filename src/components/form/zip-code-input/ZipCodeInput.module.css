@@ -6,7 +6,7 @@
 .zipCodeInputContainer input {
   height: 100%;
   width: 100%;
-  padding: 5px 20px 5px 30px;
+  padding: 5px 20px 5px 40px;
   border: none;
   outline: none;
   font-size: 1.3rem;
@@ -19,4 +19,5 @@
   top: calc(50% - 10px);
   color: var(--lightblue);
   font-size: 1.2rem;
+  margin-left: 10px;
 }

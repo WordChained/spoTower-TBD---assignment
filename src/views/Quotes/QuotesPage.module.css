@@ -1,2 +1,25 @@
 .quotesPageContainer {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.quotesPageContainer a {
+  background-color: var(--orange);
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+  border-radius: 5px;
+  height: max-content;
+}
+.placeholder {
+  background-color: var(--lightblue);
+  box-shadow: var(--boxshadow);
+  height: 70px;
+  padding: 20px;
+  width: 200px;
+  color: white;
+  border-radius: 3em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
