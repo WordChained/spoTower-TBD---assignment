@@ -1,53 +1,20 @@
-import React, { useState } from "react";
-import { QuotesButton } from "../../../components/shared/quotes-button/QuotesButton";
-import { useWindowSize } from "../../../hooks/useWindowSize";
+import React from "react";
 import styles from "./QuoteCard.module.css";
-import { AiFillStar } from "react-icons/ai";
-import { BiChevronDown } from "react-icons/bi";
-import { DesktopList } from "./DesktopList";
+import { CardButton } from "./card-button/CardButton";
+import { AdvantagesList } from "./advantages-list/AdvantagesList";
 export const QuoteCard = ({ quote, index, isOnlyCard }) => {
-  const windowSize = useWindowSize();
-  const [showList, setShowList] = useState(false);
-  const toggleList = () => {
-    setShowList(!showList);
-  };
   return (
     <div
       className={styles.quoteCardContainer}
       style={{ margin: isOnlyCard ? "auto" : "" }}
     >
-      {windowSize.width < 700 ? (
-        <div className={styles.starContainer}>
-          <AiFillStar />
-        </div>
-      ) : (
-        <div className={styles.numberContainer}>
-          <span>{index + 1}</span>
-        </div>
-      )}
+      <div className={styles.indexAndStar}>{index + 1}</div>
       <div className={styles.imageContainer}>
         <img src={quote.image} alt="" />
       </div>
       <h3>{quote.promotionTitle}</h3>
-      {windowSize.width < 700 ? (
-        <div className={`${styles.list} ${showList ? styles.open : ""}`}>
-          <div className={styles.arrowContainer} onClick={toggleList}>
-            <BiChevronDown />
-          </div>
-          <ul>
-            {quote.advanteges.map((item) => (
-              <li key={item.id}>{item.text}</li>
-            ))}
-          </ul>
-        </div>
-      ) : (
-        <DesktopList quote={quote} />
-      )}
-      {windowSize.width > 700 ? (
-        <QuotesButton text="View My Quote" borderRadius={"3em"} width="50%" />
-      ) : (
-        <button className={styles.blueButton}>View My Quote</button>
-      )}
+      <AdvantagesList quote={quote} />
+      <CardButton text="View My Quote" />
     </div>
   );
 };

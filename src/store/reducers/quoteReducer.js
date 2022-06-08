@@ -6,7 +6,7 @@ export const initialState = {
   quotes: [
     {
       id: "123",
-      advanteges: [
+      advantages: [
         {
           id: "4566",
           text: "Take Advantage of safe Driver, Sign Online, Pay-in-full, Multi-Car and other Discounts",
@@ -29,7 +29,7 @@ export const initialState = {
     },
     {
       id: "456",
-      advanteges: [
+      advantages: [
         {
           id: "123",
           text: "Take Advantage of safe Driver, Sign Online, Pay-in-full, Multi-Car and other Discounts",
@@ -52,7 +52,7 @@ export const initialState = {
     },
     {
       id: "678",
-      advanteges: [
+      advantages: [
         {
           id: "4566",
           text: "Take Advantage of safe Driver, Sign Online, Pay-in-full, Multi-Car and other Discounts",
@@ -75,7 +75,7 @@ export const initialState = {
     },
     {
       id: "8910",
-      advanteges: [
+      advantages: [
         {
           id: "234234",
           text: "Take Advantage of safe Driver, Sign Online, Pay-in-full, Multi-Car and other Discounts",

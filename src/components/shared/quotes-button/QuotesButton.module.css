@@ -3,6 +3,10 @@
   padding: 15px;
   color: white;
   box-shadow: var(--boxshadow);
+  width: 100%;
+  border-radius: 18px;
+  background-color: var(--orange);
+  font-size: 1rem;
 }
 .quotesButtonContainer:disabled {
   background-color: grey !important;

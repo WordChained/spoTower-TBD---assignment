@@ -10,34 +10,12 @@
   width: 90%;
   border-radius: 7px;
   position: relative;
-  /* overflow: hidden; */
   height: max-content;
   max-width: 600px;
   min-height: 318px;
   background-color: beige;
 }
-.quoteCardContainer .starContainer {
-  color: white;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: transparent;
-  /* background-color: gold; */
-  border-bottom-right-radius: -10%;
-  /* padding: 20px; */
-  width: 0;
-  height: 0;
-  border-top: 70px solid gold;
-  border-bottom: 70px solid transparent;
-  border-right: 70px solid transparent;
-  font-size: 1.7rem;
-}
-.starContainer svg {
-  position: absolute;
-  top: -60px;
-  left: 10px;
-  /* transform: translate(-50%, -50%); */
-}
+
 .quoteCardContainer .blueButton {
   border-radius: 5px;
   padding: 10px;
@@ -67,7 +45,6 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.491);
   margin-bottom: 20px;
   position: relative;
-  /* z-index: 1; */
   transition: all 0.5s ease-in-out;
   text-align: start;
 }
@@ -84,7 +61,6 @@
   left: 50%;
   top: -12.5px;
   transform: translateX(-50%);
-  /* z-index: 10; */
   color: white;
   background-color: grey;
   border-radius: 50%;
@@ -99,7 +75,6 @@
   cursor: pointer;
   font-size: 1.5rem;
 }
-
 .list.open {
   height: 230px;
 }
@@ -107,23 +82,25 @@
   transform: rotate(180deg);
   left: calc(50% - 12.5px);
   top: calc(100% - 12.5px);
-  /* transform-origin: right; */
 }
 .list.open ul {
   height: 300px;
 }
-.numberContainer {
-  background-color: var(--lightblue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  color: white;
-  border-radius: 5px;
+
+.indexAndStar {
+  color: gold;
   position: absolute;
   top: 0;
   left: 0;
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(to bottom right, gold 50%, beige 50%);
+}
+.indexAndStar::after {
+  content: url("../../../assets/icons/white-star.png");
+  position: absolute;
+  left: calc(45% - 20px);
+  top: calc(45% - 20px);
 }
 @media (min-width: 700px) {
   .quoteCardContainer {
@@ -135,7 +112,23 @@
     object-fit: contain;
     padding: 0;
     outline: none;
-    /* border-radius: 3px; */
+  }
+  .indexAndStar {
+    background: unset;
+    background-color: var(--lightblue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: white;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .indexAndStar::after {
+    content: unset;
   }
 }
 @media (min-width: 1529px) {

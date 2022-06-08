@@ -4,7 +4,7 @@ export const DesktopList = ({ quote }) => {
   return (
     <>
       <ul className={styles.desktopListContainer}>
-        {quote.advanteges.map((item) => (
+        {quote.advantages.map((item) => (
           <li key={item.id}>{item.text}</li>
         ))}
       </ul>

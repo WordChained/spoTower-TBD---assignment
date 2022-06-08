@@ -1,0 +1,87 @@
+.advantagesListContainer {
+  height: 1px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.491);
+  margin-bottom: 20px;
+  position: relative;
+  /* z-index: 1; */
+  transition: all 0.5s ease-in-out;
+  text-align: start;
+}
+.advantagesListContainer ul {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.arrowContainer {
+  position: absolute;
+  left: 50%;
+  top: -12.5px;
+  transform: translateX(-50%);
+  /* z-index: 10; */
+  color: white;
+  background-color: grey;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  padding: 1px;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.advantagesListContainer.open {
+  height: 230px;
+}
+.advantagesListContainer.open .arrowContainer {
+  transform: rotate(180deg);
+  left: calc(50% - 12.5px);
+  top: calc(100% - 12.5px);
+  /* transform-origin: right; */
+}
+.advantagesListContainer.open ul {
+  height: 300px;
+}
+.linkToSite {
+  display: none;
+}
+@media (min-width: 700px) {
+  .advantagesListContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+  }
+
+  .advantagesListContainer ul,
+  .advantagesListContainer.open ul {
+    justify-content: space-around;
+    height: max-content;
+    gap: 15px;
+  }
+  .advantagesListContainer.open,
+  .advantagesListContainer {
+    height: max-content;
+  }
+  .advantagesListContainer,
+  .advantagesListContainer.open {
+    border: none;
+    justify-content: space-between;
+  }
+  .linkToSite {
+    display: inline-block;
+    align-self: center;
+    text-align: center;
+    color: grey;
+    width: max-content;
+    margin-top: 15px;
+  }
+  .arrowContainer {
+    display: none;
+  }
+}
