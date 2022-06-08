@@ -2,20 +2,21 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router";
 import { QuotesList } from "../../components/quotes/quotes-list/QuotesList";
-import { QuotesContext } from "../../store/contexts/quoteContext";
+// import { QuotesContext } from "../../store/contexts/quoteContext";
 import styles from "./QuotesPage.module.css";
 import { quotesData } from "../../assets/data/quotesData";
 const QuotesPage = () => {
   const { state } = useLocation();
-  const { quotesState } = useContext(QuotesContext);
-  const [filteredQuotes, setFilteredQuotes] = useState(quotesData);
+  // const { quotesState } = useContext(QuotesContext);
+  const [filteredQuotes, setFilteredQuotes] = useState([]);
   // const [filteredQuotes, setFilteredQuotes] = useState(quotesState.quotes);
   useEffect(() => {
     if (!state) return;
     setFilteredQuotes(
       quotesData.filter((quote) => {
+        console.log(quote.ageRestriction);
         return (
-          quote.ageRestriction > state.age &&
+          quote.ageRestriction <= state.age &&
           quote.zipCodeList.includes(state.zipCode)
         );
       })

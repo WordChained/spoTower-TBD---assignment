@@ -1,3 +1,7 @@
+import libertyMutualLogo from "../../assets/imgs/liberty-mutual.png";
+import progressiveLogo from "../../assets/imgs/progressive.png";
+import allstateLogo from "../../assets/imgs/allstate.png";
+
 export const quotesData = [
   {
     id: "123",
