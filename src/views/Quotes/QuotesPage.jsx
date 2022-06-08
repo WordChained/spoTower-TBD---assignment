@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { QuotesList } from "../../components/quotes/quotes-list/QuotesList";
 // import { QuotesContext } from "../../store/contexts/quoteContext";
 import styles from "./QuotesPage.module.css";
 import { quotesData } from "../../assets/data/quotesData";
 const QuotesPage = () => {
   const { state } = useLocation();
+  const navigate = useNavigate();
   // const { quotesState } = useContext(QuotesContext);
   const [filteredQuotes, setFilteredQuotes] = useState([]);
   // const [filteredQuotes, setFilteredQuotes] = useState(quotesState.quotes);
@@ -40,7 +41,9 @@ const QuotesPage = () => {
       {!!filteredQuotes.length ? (
         <QuotesList quotes={filteredQuotes} />
       ) : (
-        <div className={styles.placeholder}>No luck..</div>
+        <div className={styles.placeholder} onClick={() => navigate("/")}>
+          No luck..
+        </div>
       )}
     </section>
   );
