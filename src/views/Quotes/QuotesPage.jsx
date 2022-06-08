@@ -14,7 +14,6 @@ const QuotesPage = () => {
     if (!state) return;
     setFilteredQuotes(
       quotesData.filter((quote) => {
-        console.log(quote.ageRestriction);
         return (
           quote.ageRestriction <= state.age &&
           quote.zipCodeList.includes(state.zipCode)

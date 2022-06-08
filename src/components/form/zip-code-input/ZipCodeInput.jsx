@@ -18,7 +18,7 @@ export const ZipCodeInput = ({ setZipCode }) => {
       <input
         type="number"
         placeholder="Enter Your Zip Code"
-        min={5}
+        minLength={5}
         onInput={onInput}
       />
     </div>
