@@ -24,7 +24,7 @@ export const Form = () => {
     }
     const ageInNumber = getAgeInNumber();
     quotesDispatch(filterQuotesAction({ age: ageInNumber, zipCode }));
-    navigate("/quotes");
+    navigate("/quotes", { state: { age: ageInNumber, zipCode } });
   };
   const getAgeInNumber = () => {
     switch (age) {
