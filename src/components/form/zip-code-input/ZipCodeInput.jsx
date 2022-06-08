@@ -3,11 +3,12 @@ import styles from "./ZipCodeInput.module.css";
 import { MdLocationPin } from "react-icons/md";
 export const ZipCodeInput = ({ setZipCode }) => {
   const onInput = (ev) => {
+    const value = ev.target.value.trim();
     let regExp = /[a-zA-Z]/g;
-    if (regExp.test(ev.target.value)) {
+    if (regExp.test(value)) {
       setZipCode("");
       return;
-    } else setZipCode(ev.target.value);
+    } else setZipCode(value);
   };
 
   return (
@@ -19,6 +20,7 @@ export const ZipCodeInput = ({ setZipCode }) => {
         type="number"
         placeholder="Enter Your Zip Code"
         minLength={5}
+        min={0}
         onInput={onInput}
       />
     </div>

@@ -21,3 +21,14 @@
   font-size: 1.2rem;
   margin-left: 10px;
 }
+/* Chrome, Safari, Edge, Opera */
+.zipCodeInputContainer input::-webkit-outer-spin-button,
+.zipCodeInputContainer input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.zipCodeInputContainer input[type="number"] {
+  -moz-appearance: textfield;
+}
