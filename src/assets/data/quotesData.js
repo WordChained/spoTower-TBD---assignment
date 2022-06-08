@@ -88,7 +88,7 @@ export const quotesData = [
       "Drivers who switch from state farm & save with progressive save",
     image: progressiveLogo,
     zipCodeList: ["12345"],
-    ageRestriction: 66,
+    ageRestriction: 0,
     isAgeRestricted: false,
     site: "www.progressive-insurance.com",
   },

@@ -15,12 +15,13 @@ const QuotesPage = () => {
     setFilteredQuotes(
       quotesData.filter((quote) => {
         return (
-          quote.ageRestriction < state.age &&
+          quote.ageRestriction > state.age &&
           quote.zipCodeList.includes(state.zipCode)
         );
       })
     );
   }, [state]);
+
   // useEffect(() => {
   //   if (!quotesState.quotes.length) return;
   //   setFilteredQuotes(
