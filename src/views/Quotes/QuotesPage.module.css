@@ -3,6 +3,7 @@
   margin-bottom: 10px;
   max-width: 1300px;
   margin: auto;
+  margin-top: 40px;
 }
 .quotesPageContainer a {
   background-color: var(--orange);
