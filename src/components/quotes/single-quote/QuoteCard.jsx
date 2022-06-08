@@ -5,14 +5,17 @@ import styles from "./QuoteCard.module.css";
 import { AiFillStar } from "react-icons/ai";
 import { BiChevronDown } from "react-icons/bi";
 import { DesktopList } from "./DesktopList";
-export const QuoteCard = ({ quote, index }) => {
+export const QuoteCard = ({ quote, index, isOnlyCard }) => {
   const windowSize = useWindowSize();
   const [showList, setShowList] = useState(false);
   const toggleList = () => {
     setShowList(!showList);
   };
   return (
-    <div className={styles.quoteCardContainer}>
+    <div
+      className={styles.quoteCardContainer}
+      style={{ margin: isOnlyCard ? "auto" : "" }}
+    >
       {windowSize.width < 700 ? (
         <div className={styles.starContainer}>
           <AiFillStar />
